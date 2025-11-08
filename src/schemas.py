@@ -1,8 +1,12 @@
+from datetime import datetime
+
 from pydantic import BaseModel, HttpUrl
 
 
-class Schema(BaseModel):
-    id: int
+class ShortLinkSchema(BaseModel):
+    id: str
+    original_link: HttpUrl
+    ends_at: datetime
 
 
 class ShortLinkAddSchema(BaseModel):
